@@ -1,0 +1,85 @@
+{
+    "widgets": [
+        {
+            "x": 0,
+            "y": 0,
+            "type": "static-text",
+            "title": "Health Dashboard Instructions",
+            "width": 12,
+            "height": 4,
+            "content": "Welcome to your Personal Health Dashboard! Enter your daily health metrics in the fields below. The AI will analyze your data and provide personalized insights. You can also use the chat section at the bottom to ask specific health-related questions. Please enter numbers only for steps, sleep hours, and heart rate."
+        },
+        {
+            "x": 0,
+            "y": 4,
+            "type": "text-input",
+            "title": "Daily Steps",
+            "width": 3,
+            "height": 4,
+            "placeholder": "Enter number of steps (e.g. 8000)"
+        },
+        {
+            "x": 3,
+            "y": 4,
+            "type": "text-input",
+            "title": "Sleep Hours",
+            "width": 3,
+            "height": 4,
+            "placeholder": "Enter hours slept (e.g. 7.5)"
+        },
+        {
+            "x": 6,
+            "y": 4,
+            "type": "text-input",
+            "title": "Resting Heart Rate",
+            "width": 3,
+            "height": 4,
+            "placeholder": "Enter beats per minute (e.g. 65)"
+        },
+        {
+            "x": 9,
+            "y": 4,
+            "type": "select",
+            "title": "Overall Mood",
+            "width": 3,
+            "height": 2,
+            "options": [
+                "Great",
+                "Good",
+                "Okay",
+                "Not so good",
+                "Poor"
+            ],
+            "placeholder": "Select your mood",
+            "defaultValue": null
+        },
+        {
+            "x": 0,
+            "y": 8,
+            "type": "inferred-text",
+            "title": "Health Analysis",
+            "width": 12,
+            "height": 8,
+            "prompt": "As a health analytics expert, analyze the following daily metrics and provide a brief but comprehensive health insights report. Include specific observations and gentle recommendations for improvement where relevant: Steps: [Daily Steps], Sleep Duration: [Sleep Hours] hours, Resting Heart Rate: [Resting Heart Rate] bpm, Mood: [Overall Mood]. Consider the relationships between these metrics in your analysis.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0
+            }
+        },
+        {
+            "x": 0,
+            "y": 16,
+            "type": "chat",
+            "title": "Health Assistant Chat",
+            "width": 12,
+            "height": 12,
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0
+            },
+            "placeholder": "Ask any health-related questions...",
+            "initialUserMessage": "I've entered my health metrics: Steps: [Daily Steps], Sleep: [Sleep Hours] hours, Heart Rate: [Resting Heart Rate] bpm, and Mood: [Overall Mood]. Please provide health advice based on this context.",
+            "initialAssistantMessage": "I'm your health assistant, ready to answer questions and provide personalized advice based on your health metrics!"
+        }
+    ]
+}
